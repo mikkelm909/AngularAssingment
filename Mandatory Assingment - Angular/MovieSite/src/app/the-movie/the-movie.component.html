@@ -1,0 +1,56 @@
+
+
+<div  class="jumbotron">
+
+    <img style="display: block; margin-left: auto; margin-right: auto; background-repeat: space; padding-right: 10%;" align="right" class="center" class="rounded movie_img" src='{{movie?.poster_path}}' width="40%" height="40%">
+    <h1>{{movie?.title}}</h1>  
+        {{movie?.tagline}}
+    <br>
+    <br>
+    <div class="row">
+        <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>Overview: <br> {{movie?.overview}}</div>
+    </div>
+
+
+    <div *ngIf="movie?.originalLang" class="row">
+        <br>
+        <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>Original language: <br> {{movie?.originalLang}}</div>
+    </div>
+    
+    <div *ngIf="movie?.site" class="row">
+        <div class="col-md-6">Website: {{movie?.site}} </div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>Date of release: {{movie?.release_date}}</div>
+    </div>
+
+
+    <div *ngIf="movie?.adult == true" class="row">
+        <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>Not for kids adult only!</div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>Movie budget: <p style="color: red;" *ngIf="movie?.budget == 0">not avaible</p> <p *ngIf="movie?.budget">{{movie?.budget}} $$</p></div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>Revenue: {{movie?.revenue}}</div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>Popularity: {{movie?.popularity}}</div>
+    </div>
+
+    <br>
+    <div class="row">
+        <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>Playtime: {{movie?.runtime}} minutes</div>
+    </div>
+</div>
+
+
+

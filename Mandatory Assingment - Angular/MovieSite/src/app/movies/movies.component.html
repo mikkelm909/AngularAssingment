@@ -1,0 +1,64 @@
+
+<div class="jumbotron">
+    <div class="navbar navbar-expand-lg">
+        <nav class="nav navbar-nav mr-auto movieservice">
+            <a class="nav-item nav-link" (click) = "popularMovies()">Popular</a>
+            <a class="nav-item nav-link" (click) = "popularKidsMovies()">Popular kids movie</a>
+</nav>
+        <nav class="nav navbar-nav ml-auto">
+            <form class="nav-item justify-content-end" role="search">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search" required #title>
+                    <button class="btn btn-default" (click)="getMovieName(title.value)"><i class="fa fa-search"></i></button>
+                </div>
+            </form>
+        </nav>
+    </div>
+<h1>MovieSite <img class="rounded movie_img" src='\assets\movie_black.jpg' width="80" height="80"> </h1>  
+  <br>
+      This small App demonstrates a HttpService call to TheMovieDb 
+</div>
+<br>
+
+ 
+<ul *ngFor="let movie of movies; let first = first" class="movielist">
+    <div *ngIf="movie.poster_path">
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-2 poster">
+                <img (click) = "getId(movie)" src="{{movie.poster_path}}" class="img-responsive img-rounded">
+            </div>
+            <div class="col-md-6 well">
+                <div class="row">
+
+                        <div class="col-md-10"><h4>{{movie.title}}</h4></div>
+                        <div class="col-md-2">{{movie.vote_average}} <span class="far fa-star" aria-hidden="true"></span></div>
+
+                </div>
+                    <div class="row">
+                        <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>{{movie.release_date}}</div>
+                    </div>
+                    {{movie.overview}}<br><br>
+
+                    <div style="width: 100%; display: table;">
+                        <div style="display: table-row">
+                            <div style="width: 300px; display: table-cell;">
+                            Play Trailer <button  class="btn btn-default" (click)="toTrailer(movie)" ><span class="far fa-play-circle"></span></button> 
+                            </div>
+
+                            <div align="right" style="display: table-cell;">
+                                See Credits <button class="btn btn-default" (click)="(goToCredits(movie))" ><span class="far fa-play-circle"></span></button>
+                            </div>
+                        </div>
+
+                    </div>
+                    
+
+
+                    <div class="col-md-5"></div>
+
+            </div>
+        </div>
+    </div>
+
+</ul>

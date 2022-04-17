@@ -1,0 +1,28 @@
+
+
+<div  class="jumbotron">
+
+    <img (click)="getActor()" style="display: block; margin-left: auto; margin-right: auto; background-repeat: space; padding-right: 10%;" align="right" class="center" class="rounded movie_img" src='{{actor?.profile_path}}' width="40%" height="40%">
+    <h1>{{actor?.name}}  {{actor?.birthday}} <p *ngIf="actor?.deathday"> - {{actor?.deathday}} $$</p></h1>
+        AKA:
+    <br><br>
+    <ul  class="row" style="font-size: 12px;" *ngFor="let name of actor?.also_known_as" >
+        <li style="margin: -10px;" class="column">{{name}}</li>
+    </ul>
+    <div class="row">
+    <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span>Birthplace:  {{actor?.place_of_birth}}</div>
+</div>
+    <br>
+    {{actor?.biography}}
+    <br>
+
+</div>
+
+
+<div *ngIf="actor?.homepage" class="row">
+    <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span><p><a href="{{actor?.homepage}}" target="_blank">Homepage</a></p></div>
+</div>
+
+<div class="row">
+    <div class="col-md-6"><span class="far fa-calender" aria-hidden="true"></span><p><a href="{{actor?.imdb_id}}" target="_blank">IMDB Page</a></p></div>
+</div>

@@ -1,0 +1,4 @@
+
+.h_iframe {
+    overflow:hidden; height:100%; width:100%; position: absolute; top: 10; left: 10; bottom: 10; right: 10;
+}

@@ -1,0 +1,27 @@
+.movielist{
+    list-style-type: none;
+}
+.well{
+   margin-bottom: 0em;
+   margin-right: 6em; 
+   margin-left: -1em
+   
+}
+
+.poster{
+    margin-right: 0.5em; 
+    margin-bottom: 1.5em
+}
+
+.overview{
+    margin-top: 3em;
+}
+
+.movieservice {
+    margin-right: 2em;
+}
+
+.search {
+    padding-top: 16px;
+    padding-bottom: 8px;
+}
